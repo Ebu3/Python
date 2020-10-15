@@ -1,0 +1,38 @@
+def julian_day(d,m,y):
+    a = y / 100
+    b = a / 4
+    c = 2 - a + b
+    e = 365.25 * ( y + 4716 )
+    f = 30.6001 * ( m + 1 )
+    jd = int(a)+int(b)+int(c)+int(e)+int(f)-1524.5
+    return jd
+    
+    julian_day(27,9,2006)
+    2454003.5
+    
+    
+    
+    
+    
+    def jd_trh(jd):
+    
+    z = jd + 0.5
+    w = ( z - 1867216.25 ) / 36524.25
+    x = int(w / 4)
+    a = z + 1 + w - x
+    b = int(a) + 1524
+    c = int(( b - 122.1 ) / 365.25)
+    d = int(c * 365.25)
+    e = int(( b - d ) / 30.6001)
+    f = int(e * 30.6001)
+    
+    gün = b - d - f
+    ay = e - 1
+    yıl = c - 4716
+    
+    tarih = gün,ay,yıl
+    return tarih
+    
+    
+    jd_trh(2454005.5)
+    (27, 9, 2006)
